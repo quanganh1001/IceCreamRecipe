@@ -1,8 +1,7 @@
-
 using Models;
 using Models.Users;
 
-namespace Repositories.Users;
+namespace IceCreamRecipe.Repositories.Users;
 
 public interface IUserRepo {
 

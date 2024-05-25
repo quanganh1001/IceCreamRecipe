@@ -1,6 +1,7 @@
 using AutoMapper;
 using Exceptions;
 using IceCreamRecipe.Models;
+using IceCreamRecipe.Repositories.Users;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using Models.Users;

@@ -1,9 +1,14 @@
 
+
 using System.Reflection;
+using System.Text;
 using Exceptions;
 using IceCreamRecipe.Models;
+using IceCreamRecipe.Repositories.Users;
 using Mapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Repositories;
 using Repositories.Books;
@@ -75,6 +80,31 @@ builder.Services.AddCors(options => {
     });
 });
 
+// add authentication
+builder.Services
+    .AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.IncludeErrorDetails = true;
+        options.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ClockSkew = TimeSpan.Zero,
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            RoleClaimType = "Role",
+            NameClaimType = "Name",
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration.GetValue<string>("Jwt:SymmetricSecurityKey"))
+            ),
+        };
+    });
 
 // add repositories
 builder.Services.AddScoped<IUserRepo, UserRepo>();

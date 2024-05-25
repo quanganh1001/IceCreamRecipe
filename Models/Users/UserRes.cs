@@ -26,7 +26,7 @@ namespace Models.Users {
 
         public string Country { get; set; }
 
-        public ICollection<SubscriptionRes> Subscriptions { get; set; }
+        public Subscription Subscriptions { get; set; }
         
         public bool IsActivated { get; set; }
     }
