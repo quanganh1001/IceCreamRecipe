@@ -14,5 +14,17 @@
             login
             </summary>
         </member>
+        <member name="T:IceCreamRecipe.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:IceCreamRecipe.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:IceCreamRecipe.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:IceCreamRecipe.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

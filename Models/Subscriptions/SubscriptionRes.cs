@@ -7,7 +7,7 @@ namespace Models.Subscriptions {
 
         public DateTime ExpiredAt { get; set; }
 
-        public PlanRes Plan { get; set; }
+        public int Plan { get; set; }
         
         public DateTime CreatedAt { get; set; }
         

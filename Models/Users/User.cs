@@ -33,6 +33,5 @@ public class User : BaseEntity {
 
     public bool IsActivated { get; set; } = false;
     
-    public Subscription Subscriptions { get; set; } = new Subscription();
-
+    public ICollection<Subscription> Subscriptions { get; set; } = [];
 }
