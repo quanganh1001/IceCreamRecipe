@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IceCreamRecipe</name>
+    </assembly>
+    <members>
+        <member name="M:Controllers.AuthController.Register(Models.Users.RegisterDto)">
+            <summary>
+            register user
+            </summary>
+        </member>
+        <member name="M:Controllers.AuthController.Login(Models.Users.LoginDto)">
+            <summary>
+            login
+            </summary>
+        </member>
+    </members>
+</doc>

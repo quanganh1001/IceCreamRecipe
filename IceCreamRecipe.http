@@ -1,0 +1,6 @@
+@IceCreamRecipe_HostAddress = http://localhost:5106
+
+GET {{IceCreamRecipe_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
